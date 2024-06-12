@@ -1,1 +1,1 @@
-# -CodeClauseInternship_basic1
+# -CodeClauseInternship_Imagegallery
