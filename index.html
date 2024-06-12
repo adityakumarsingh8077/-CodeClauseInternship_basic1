@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+
+</head>
+<body>
+   
+    <div  class="main">
+        <div class="nav">
+            <div class="heading">
+                <h1 >Image Gallery</h1>
+            </div>
+         
+            <div class="btns">
+                <div class="btn" value="all" onclick="filter('all');">All</div>
+                <div class="btn" value="animals" onclick="filter('animals');">Animals</div>
+                <div class="btn" value="bikes" onclick="filter('bikes');">Bikes</div>
+                <div class="btn" value="cars" onclick="filter('cars');">Cars</div>
+                <div class="btn" value="flowers" onclick="filter('flowers');">Flowers</div>
+                <div class="btn" value="nature" onclick="filter('nature');">Nature</div>
+            </div>
+
+        </div>
+        <div class="full-img" id="fullImgBox">
+            <img  src="https://images.unsplash.com/photo-1462524500090-89443873e2b4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  id="fullImg" alt="">
+            <span onclick="closeFullImg()">X</span>
+        </div>
+
+
+
+        <div class="img-gallery">
+            <div class="pic bikes">
+                <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1695013147209-1516a20f0cdd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" onclick="openFullImg(this.src)" alt=""  >
+            </div> 
+            <div class="pic flowers">
+                <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1462524500090-89443873e2b4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+
+            </div> 
+            <div class="pic cars">
+                <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+
+            </div> 
+            <div class="pic animals">
+                <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1523480717984-24cba35ae1ef?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+
+            </div> 
+            <div class="pic nature">
+                <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+
+            </div> 
+         
+                <div class="pic bikes">
+                    <img data-scroll data-scroll-speed=".4" src="https://i.pinimg.com/564x/7b/87/41/7b8741ac5aa3c219adbde79bcd94aeb3.jpg"  onclick="openFullImg(this.src)"  alt="">
+                </div> 
+                <div class="pic flowers">
+                    <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1622069932883-1d8d26c50113?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"   onclick="openFullImg(this.src)" alt="">
+    
+                </div> 
+                <div class="pic cars">
+                    <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+    
+                </div> 
+                <div class="pic animals">
+                    <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1600521605615-a8d3a23d8262?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"   onclick="openFullImg(this.src)" alt="">
+    
+                </div> 
+                <div class="pic nature">
+                    <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"   onclick="openFullImg(this.src)" alt="">
+    
+                </div> 
+                
+                    <div class="pic bikes">
+                        <img data-scroll data-scroll-speed=".4" src="https://i.pinimg.com/564x/81/03/2e/81032e86d7b3afa7c280f4202801a4c5.jpg"   onclick="openFullImg(this.src)" alt="">
+                    </div> 
+                    <div class="pic flowers">
+                        <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1471899236350-e3016bf1e69e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+        
+                    </div> 
+                    <div class="pic cars">
+                        <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=1883&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+        
+                    </div> 
+                    <div class="pic animals">
+                        <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1588293491737-070ef4cdb924?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+        
+                    </div> 
+                    <div class="pic nature">
+                        <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+        
+                    </div> 
+                    
+                        <div class="pic bikes">
+                            <img data-scroll data-scroll-speed=".4" src="https://i.pinimg.com/564x/68/23/a8/6823a85460551a26773e5e51a20fd10e.jpg"  onclick="openFullImg(this.src)"  alt="">
+                        </div> 
+                        <div class="pic flowers">
+                            <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1474112704314-8162b7749a90?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                        <div class="pic cars">
+                            <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                        <div class="pic animals">
+                            <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1539734710025-9ebbe24f22f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                        <div class="pic nature ">
+                            <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                        <div class="pic bikes">
+                            <img data-scroll data-scroll-speed=".4" src="https://i.pinimg.com/736x/62/6c/3c/626c3cada988ffd0fe6f471a8760c0e5.jpg"  onclick="openFullImg(this.src)"  alt="">
+                        </div> 
+                        <div class="pic flowers">
+                            <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1496483648148-47c686dc86a8?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                        <div class="pic cars">
+                            <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                        <div class="pic animals">
+                            <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1496794795115-3247c050b08e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                        <div class="pic nature">
+                            <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                        <div class="pic nature">
+                            <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1431794062232-2a99a5431c6c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+
+                       
+                        <div class="pic bikes">
+                            <img data-scroll data-scroll-speed=".4" src="https://images.unsplash.com/photo-1690564971527-b21f5b939dff?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"  onclick="openFullImg(this.src)"  alt="">
+                        </div> 
+                        <div class="pic flowers">
+                            <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2024/02/19/08/49/hibiscus-8582876_1280.jpg"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                        <div class="pic cars">
+                            <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2019/08/08/23/33/car-4393990_640.jpg"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                        <div class="pic animals">
+                            <img data-scroll data-scroll-speed=".4" src="https://media.istockphoto.com/id/1203158562/photo/adorable-baby-fox-pups-playing.jpg?s=2048x2048&w=is&k=20&c=_pl75tLcPkigJBRC1i8GXorhG3zZ8c0Z7VkFakiR2XU="  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                        <div class="pic nature">
+                            <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072821_640.jpg"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div>
+                        
+                        <div class="pic bikes">
+                            <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2015/08/27/09/06/bike-909690_960_720.jpg"  onclick="openFullImg(this.src)"  alt="">
+                        </div> 
+                        <div class="pic flowers">
+                            <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2024/03/06/09/32/liverworts-8616125_640.jpg"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                        <div class="pic cars">
+                            <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2014/09/07/22/34/car-race-438467_640.jpg"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                        <div class="pic animals">
+                            <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2017/05/31/18/38/sea-2361247_640.jpg"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                    <div class="pic nature">
+                        <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_640.jpg"  onclick="openFullImg(this.src)"  alt="">
+                    
+                        </div> 
+                        <div class="pic bikes">
+                            <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2014/07/31/23/10/biker-407123_960_720.jpg"  onclick="openFullImg(this.src)"  alt="">
+                        </div> 
+                        <div class="pic flowers">
+                            <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2013/07/21/13/00/rose-165819_640.jpg"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                        <div class="pic cars">
+                            <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2015/06/05/15/02/audi-798530_640.jpg"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                        <div class="pic animals">
+                            <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2023/05/20/16/35/dog-8006807_640.jpg"  onclick="openFullImg(this.src)"  alt="">
+            
+                        </div> 
+                    <div class="pic nature">
+                        <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2021/09/20/21/32/lake-6641880_640.jpg"  onclick="openFullImg(this.src)"  alt="">
+                    
+                        </div> 
+                        <div class="pic bikes">
+                            <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2016/03/27/17/59/motorcycle-1283299_960_720.jpg"  onclick="openFullImg(this.src)"  alt="">
+                        </div> 
+                        <div class="pic flowers">
+                            <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2021/05/27/14/40/anemone-6288318_640.jpg"  onclick="openFullImg(this.src)"  alt="">
+                            
+                        </div> 
+                        <div class="pic cars">
+                            <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2017/03/27/14/56/auto-2179220_640.jpg"  onclick="openFullImg(this.src)"  alt="">
+                                
+                        </div> 
+                        <div class="pic animals">
+                            <img data-scroll data-scroll-speed=".4" src="https://cdn.pixabay.com/photo/2012/04/30/22/37/butterfly-44882_640.jpg"  onclick="openFullImg(this.src)"  alt="">
+                                    
+                        </div> 
+                        <div class="pic nature">
+                            <img data-scroll data-scroll-speed=".4"  src="https://cdn.pixabay.com/photo/2023/04/10/10/19/mountain-7913365_640.jpg"  onclick="openFullImg(this.src)"  alt="">
+                        </div>
+                                            
+
+                        
+        </div>
+        <footer>
+        <div class="footerContainer">
+            <div class="socialIcons">
+                <a href="https://www.instagram.com/singhaditya8077"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://github.com/adityakumarsingh8077"><i class="fa-brands fa-github"></i></a>
+                <a href="https://twitter.com/singhaditya8077"><i class="fa-brands fa-twitter"></i></a>
+                <a href="mailto:singhaditya8077@gmail.com"><i class="fab fa-google"></i></a>
+                <a href="https://www.youtube.com/channel/studentslife2408"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+            <div class="footerNav">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">Our Team</a></li>
+                </ul>
+            </div>
+           
+        </div>
+        <div class="footerBottom">
+            <p>Copyright &copy; 2024. All rights reserved. Designed by <span class="designer">Aditya Kumar Singh</span></p>
+        </div>
+    </footer>
+
+
+
+
+
+
+    </div>
+
+  
+   
+
+     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <!-- <script  type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script>  -->
+    <script src="script.js"></script>
+
+    
+</body>
+</html>
